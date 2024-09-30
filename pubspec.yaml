@@ -1,0 +1,40 @@
+name: chiru
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+    
+  whatsup: ^1.0.2
+  just_audio: ^0.9.40
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Fredoka
+      fonts:
+        - asset: assets/fonts/Fredoka-Bold.ttf
+        - asset: assets/fonts/Fredoka-Light.ttf
+        - asset: assets/fonts/Fredoka-Medium.ttf
+        - asset: assets/fonts/Fredoka-Regular.ttf
+        - asset: assets/fonts/Fredoka-SemiBold.ttf
+
+  assets:
+    - assets/fonts/
+    - assets/sounds/
+    - assets/images/
+    - assets/images/wp_morning/
+    - assets/images/wp_afternoon/
+    - assets/images/wp_evening/
+    - assets/images/wp_night/
