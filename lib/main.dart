@@ -1,25 +1,22 @@
+import 'package:chiru/app/app.dart';
+// import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
-import 'package:chiru/app/app.preload.dart';
-import 'package:chiru/app/app.pageroute.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  // await Firebase.initializeApp(
+  //   name: "Chiru",
+  //   options: const FirebaseOptions(
+  //     apiKey: String.fromEnvironment('API_KEY'),
+  //     appId: String.fromEnvironment('APP_ID'),
+  //     messagingSenderId: String.fromEnvironment('MESSAGING_SENDER_ID'),
+  //     projectId: String.fromEnvironment('PROJECT_ID'),
+  //     storageBucket: String.fromEnvironment('STORAGE_BUCKET'),
+  //     iosBundleId: String.fromEnvironment('BUNDLE_ID'),
+  //   ),
+  // );
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const PreloadPage(),
-      theme: ThemeData(
-        fontFamily: 'Fredoka',
-        pageTransitionsTheme: PageTransitionsTheme(builders: {
-          TargetPlatform.iOS: HolePageTransitionsBuilder(),
-          TargetPlatform.android: HolePageTransitionsBuilder(),
-        }),
-      ),
-    );
-  }
+  runApp(const ChiruApp());
 }
