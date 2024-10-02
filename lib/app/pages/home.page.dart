@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
       sounds.addAll({type: AudioPlayer()});
       await sounds[type]?.setAsset('assets/sounds/$type.mp3');
       await sounds[type]?.setLoopMode(LoopMode.all);
+      await sounds[type]?.setVolume(0.5);
     }
   }
 

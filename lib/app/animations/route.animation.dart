@@ -6,7 +6,7 @@ class HoleMaterialPageRoute extends MaterialPageRoute {
   HoleMaterialPageRoute({required super.builder});
 
   @override
-  Duration get transitionDuration => const Duration(milliseconds: 800);
+  Duration get transitionDuration => const Duration(seconds: 1);
 
   @override
   Widget buildTransitions(BuildContext context, Animation<double> animation,

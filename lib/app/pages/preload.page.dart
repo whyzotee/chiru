@@ -23,7 +23,7 @@ class _PreloadPageState extends State<PreloadPage> {
     super.initState();
     wallpaper = 'assets/images/wp_$wallpaperDIR/$rWall.jpg';
 
-    Future.delayed(const Duration(milliseconds: 500), () {
+    Future.delayed(const Duration(milliseconds: 300), () {
       if (mounted) {
         Navigator.push(
           context,
