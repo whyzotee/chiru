@@ -1,3 +1,5 @@
+import 'package:chiru/app/bloc/counter.bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:whatsup/whatsup.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
@@ -104,6 +106,16 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(child: Text("${ws.now()}, $name", style: fontSmall)),
+              const Spacer(),
+              Center(
+                child: BlocBuilder<CounterCubit, int>(builder: (_, state) {
+                  return Text("$state");
+                }),
+              ),
+              ElevatedButton(
+                onPressed: context.read<CounterCubit>().increment,
+                child: Text("OK"),
+              ),
               const Spacer(),
               Text(
                 ws.nameOfDay(),

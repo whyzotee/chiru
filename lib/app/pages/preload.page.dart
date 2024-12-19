@@ -1,6 +1,8 @@
 import 'dart:math';
 
+import 'package:chiru/app/bloc/counter.bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:whatsup/whatsup.dart';
 import 'package:chiru/app/pages/home.page.dart';
 import 'package:chiru/app/animations/route.animation.dart';
@@ -28,7 +30,10 @@ class _PreloadPageState extends State<PreloadPage> {
         Navigator.push(
           context,
           HoleMaterialPageRoute(
-            builder: (_) => HomePage(wallpaper: wallpaper),
+            builder: (_) => BlocProvider(
+              create: (context) => CounterCubit(),
+              child: HomePage(wallpaper: wallpaper),
+            ),
           ),
         );
       }
