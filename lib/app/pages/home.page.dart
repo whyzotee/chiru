@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:chiru/app/bloc/counter.bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:whatsup/whatsup.dart';
@@ -89,6 +91,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    log("Build");
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(16),
@@ -107,11 +110,9 @@ class _HomePageState extends State<HomePage> {
             children: [
               Center(child: Text("${ws.now()}, $name", style: fontSmall)),
               const Spacer(),
-              Center(
-                child: BlocBuilder<CounterCubit, int>(builder: (_, state) {
-                  return Text("$state");
-                }),
-              ),
+              BlocBuilder<CounterCubit, int>(builder: (_, state) {
+                return Text("$state");
+              }),
               ElevatedButton(
                 onPressed: context.read<CounterCubit>().increment,
                 child: Text("OK"),
