@@ -11,6 +11,7 @@ class ChiruApp extends StatelessWidget {
       home: const PreloadPage(),
       theme: ThemeData(
         fontFamily: 'Fredoka',
+        scaffoldBackgroundColor: Colors.white,
         pageTransitionsTheme: PageTransitionsTheme(builders: {
           TargetPlatform.iOS: HolePageTransitionsBuilder(),
           TargetPlatform.android: HolePageTransitionsBuilder(),

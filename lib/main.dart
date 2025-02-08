@@ -9,7 +9,7 @@ Future<void> main() async {
 
   await dotenv.load(fileName: ".env");
 
-  await initializeFirebase();
+  // await initializeFirebase();
 
   runApp(const ChiruApp());
 }
@@ -36,7 +36,7 @@ Future<void> initializeFirebase() async {
   if (projectId == null || projectId.isEmpty) {
     throw Exception("PROJECT_ID is missing or empty");
   }
-  
+
   if (storageBucket == null || storageBucket.isEmpty) {
     throw Exception("STORAGE_BUCKET is missing or empty");
   }
